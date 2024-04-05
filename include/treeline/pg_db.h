@@ -96,6 +96,8 @@ class PageGroupedDB {
   virtual Status FlattenRange(
       const Key start_key = 1,
       const Key end_key = std::numeric_limits<Key>::max()) = 0;
+      
+  virtual Status FlushAndClearRecordCache() = 0;
 };
 
 }  // namespace pg

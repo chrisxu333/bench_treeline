@@ -37,6 +37,7 @@ class PageGroupedDBImpl : public PageGroupedDB {
   Status FlattenRange(
       const Key start_key = 1,
       const Key end_key = std::numeric_limits<Key>::max()) override;
+  Status FlushAndClearRecordCache() override;
 
  private:
   void WriteBatch(const WriteOutBatch& records);

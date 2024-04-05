@@ -44,3 +44,6 @@ target_link_libraries(wal bench_common gflags benchmark::benchmark)
 # buffer manager, excluding the underlying I/O operations.
 add_executable(bufmgr_benchmark buffer_manager_benchmark.cc)
 target_link_libraries(bufmgr_benchmark bench_common_config gflags ycsbr benchmark::benchmark)
+
+add_executable(bench_treeline bench_treeline.cc)
+target_link_libraries(bench_treeline bench_common_config gflags benchmark::benchmark)

@@ -119,6 +119,12 @@ Status PageGroupedDBImpl::BulkLoad(const std::vector<Record>& records) {
   return Status::OK();
 }
 
+
+Status PageGroupedDBImpl::FlushAndClearRecordCache() {
+  cache_.ClearCache(true);
+  return Status::OK();
+}
+
 Status PageGroupedDBImpl::Put(const WriteOptions& options, const Key key,
                               const Slice& value) {
   if (!mgr_.has_value()) {
